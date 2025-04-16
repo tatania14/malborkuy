@@ -1,0 +1,606 @@
+html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Graphik", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  z-index: 100;
+  color: #fff;
+  text-align: center;
+  position: fixed;
+  border-bottom: 2px solid #b1b1b1;
+  background-color: #D2B48C; /* Warna latar navigasi */
+  line-height: 60px;
+  width: 100%;
+  transition: background-color 0.5s ease;
+  float: right;
+  height: 60px;
+  top :0;
+}
+
+.logo {
+  float: left;
+  position: relative;
+  line-height: 55px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  vertical-align: middle;
+  width: 150px;
+  margin-left: 25px; /* Sesuaikan margin antara logo dan teks (jika diperlukan) */
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 30px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold; /* Membuat tulisan menjadi bold */
+  color: #064858;
+}
+
+.menu-btn {
+  display: none; /* Sembunyikan tombol hamburger pada mode desktop */
+}
+
+/* Tambahkan media query untuk tampilan mobile */
+@media screen and (max-width: 600px) {
+  .logo img {
+    width: 100px; /* Mengurangi lebar logo di perangkat mobile */
+    margin-left: 10px; /* Sesuaikan margin antara logo dan teks untuk perangkat mobile */
+  }
+  nav ul {
+    display: none; /* Sembunyikan daftar menu saat layar kecil */
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #D2B48C; /* Warna latar navigasi */
+    text-align: center;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  nav ul li a {
+    font-size: 12px; /* Sesuaikan ukuran font untuk layar kecil */
+  }
+
+  nav ul.show {
+    display: block; /* Tampilkan daftar menu saat tombol di klik */
+  }
+
+  .menu-btn {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start; /* Mengatur agar ikon garis-garis di sebelah kanan */
+      margin-left: auto;
+      width: 30px;
+      height: 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 5px;
+    }
+  
+  .menu-icon {
+    width: 30px;
+    height: 3px;
+    background-color: #02484C; /* Warna garis hamburger */
+  }
+}
+
+/* Tambahkan gaya lain sesuai kebutuhan */
+
+section {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 50px;
+  min-height: 100vh;
+  text-align: center;
+}
+
+section h2 {
+  margin-bottom: 20px;
+}
+
+#beranda {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  background-image: url('gambar/bbb.jpeg'); /* Ganti dengan path ke gambar Anda */
+  background-size: cover; /* Mengatur ukuran gambar agar menutupi seluruh elemen */
+  background-position: center; /* Menengahkan gambar pada elemen */
+  background-repeat: no-repeat; /* Menonaktifkan pengulangan gambar */
+  background-size: 100% 100%; /* Menyesuaikan ukuran gambar dengan ukuran layar */
+  padding: 20px; /* Menambahkan padding agar konten tidak terlalu dekat dengan tepi layar */
+}
+
+#beranda img {
+  max-width: 100%; /* Mengatur lebar gambar agar tidak melebihi lebar kontainer */
+  height: auto; /* Mengatur ketinggian gambar agar tetap proporsional */
+}
+
+.buttons {
+  display: flex;
+  gap: 20px; /* Mengatur jarak antara tombol */
+  margin-top: 200px; /* Mengurangi margin-top agar tidak terlalu jauh dari atas */
+  margin-left: 20px;
+  margin-right: 300px;
+  justify-content: center;
+}
+
+.buttons button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #6768ab;
+  width: 250%; /* Mengatur lebar tombol agar mengisi seluruh lebar kontainer */
+  max-width: 150px; /* Maksimum lebar tombol agar tidak terlalu lebar pada layar besar */
+}
+
+/* Media query untuk layar berukuran kecil (mode mobile) */
+@media screen and (max-width: 600px) {
+  #beranda img {
+    max-width: 50%; /* Mengurangi lebar gambar menjadi 80% dari lebar kontainer */
+  }
+
+  .buttons {
+    flex-direction: column; /* Mengatur tombol agar ditampilkan secara vertikal */
+    align-items: center; /* Mengatur tombol agar berada di tengah */
+  }
+
+  .buttons button {
+    width: 100%; /* Mengatur lebar tombol agar mengisi seluruh lebar kontainer */
+    max-width: none; /* Membatalkan maksimum lebar tombol agar responsif di perangkat mobile */
+  }
+}
+
+#sejarah {
+background-color:#e6dbc5;
+}
+
+.tabs {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.tab-button {
+  cursor: pointer;
+  padding: 10px 15px;
+  border: 1px solid #89241c;
+  background-color: #fff;
+  color: #89241c;
+  margin-right: 5px;
+  border-radius: 5px 5px 0 0;
+  padding: 8px 10px; /* Kurangi padding untuk tampilan yang lebih ramping */
+  font-size: 18x; /* Kurangi ukuran font untuk tampilan yang lebih kecil */
+}
+
+.tab-content {
+  display: none;
+  padding: 15px;
+  width: 100%;
+  max-width: 100%;
+  padding: 15px;
+  height: auto; /* Tinggi otomatis */
+  border: 1px solid #ccc;
+  border-radius: 25px 25px 25px 25px; /* Menjadikan sudut-sudut atas agak oval */
+  font-size: 16px;
+  color: #89241c;
+  background-color: #fff5e8;
+  letter-spacing: .3px;
+  box-sizing: border-box;
+  text-align: justify;
+  font-family: "Graphik", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.gambar{
+  float: right;
+    position: relative;
+    line-height: 55px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+  }
+  
+  .gambar img {
+    vertical-align: middle;
+    width: 80%;
+    height: auto;
+    margin-top: 50px;
+    margin-right: 10px; /* Sesuaikan margin antara logo dan teks (jika diperlukan) */
+  }
+
+  /* Media query untuk perangkat mobile dengan lebar maksimum 600px */
+@media only screen and (max-width: 600px) {
+  .tab-content {
+    width: 100%; /* Menggunakan lebar penuh */
+    padding: 10px; /* Kurangi padding */
+    font-size: 14px; /* Kurangi ukuran font untuk tampilan yang lebih kecil */
+  }
+  .tab-button {
+    font-size: 15px; /* Kurangi ukuran font untuk tampilan yang lebih kecil */
+  }
+}
+
+#virtual-tour {
+  background-color: #cbcceb;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 10px;
+  display: flex;
+  height: 100vh; /* Menggunakan tinggi 100% dari viewport height */
+}
+
+#virtual-tour h2  {
+  padding: 40px;
+  font-size: 24px; /* Ukuran font */
+  font-weight: bold; /* Ketebalan font */
+  font-family: "verdana", Georgia, 'Times New Roman', Times, serif;
+}
+
+#virtual-tour h2 span.first-word {
+  color: #5a233b;
+}
+#virtual-tour h2 span.second-word {
+  color: #02586f;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Atur tinggi container agar memenuhi tinggi layar */
+}
+
+.rounded {
+  width: 100px;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  flex: 1; /* Menggunakan 1 bagian dari 2 bagian (50%) ruang flex */
+  padding: 50px;
+  margin-top: 50px;
+  border-radius: 25% 10% 25% 10%; /* Menjadikan sudut-sudut atas agak oval */
+}
+
+#teks {
+  flex: 1; /* Menggunakan 1 bagian dari 2 bagian (50%) ruang flex */
+  padding: 100px;
+  box-sizing: border-box; /* Untuk memasukkan padding ke dalam lebar dan tinggi elemen */
+  text-align: justify;
+  color: #654321;
+  font-size: 16x; /* Kurangi ukuran font untuk tampilan yang lebih kecil */
+  font-family: "Graphik", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.virtual-tour-button { /* Menambahkan kelas khusus untuk tombol di bagian Virtual Tour */
+  text-align: center; /* Pusatkan tombol pada perangkat mobile */
+  margin-top: 50px; /* Atur jarak antara teks dan tombol */
+}
+
+.virtual-tour-button button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #6768ab;
+  max-width: 150px; /* Maksimum lebar tombol agar tidak terlalu lebar pada layar besar */
+}
+
+/* Media query untuk perangkat mobile dengan lebar maksimum 600px */
+@media only screen and (max-width: 600px) {
+  #virtual-tour {
+    flex-direction: column; /* Ubah tata letak ke vertikal */
+    height: auto; /* Gunakan tinggi otomatis */
+  }
+
+  .rounded {
+    margin-top: 0; /* Hapus margin atas */
+    width: 200px; /* Sesuaikan lebar gambar */
+    height: auto; /* Tinggi otomatis */
+    padding: 20px; /* Kurangi padding agar lebih sesuai di perangkat mobile */
+    border-radius: 25%; /* Membuat gambar menjadi lingkaran */
+    display: block; /* Mengubah gambar menjadi elemen blok */
+    margin: 0 auto; /* Membuat margin otomatis pada sumbu horizontal untuk pemusatan */
+  }
+
+  #teks {
+    padding: 10px; /* Kurangi padding lebih lanjut untuk tampilan yang lebih ramping */
+    font-size: 14px; /* Kurangi ukuran font untuk tampilan yang lebih kecil */
+  }
+  .virtual-tour-button { /* Menambahkan kelas khusus untuk tombol di bagian Virtual Tour */
+    text-align: center; /* Pusatkan tombol pada perangkat mobile */
+    margin-top: 20px; /* Atur jarak antara teks dan tombol */
+  }
+  .virtual-tour-buttons button {
+    width: 100%; /* Mengatur lebar tombol agar mengisi seluruh lebar kontainer */
+    max-width: none; /* Membatalkan maksimum lebar tombol agar responsif di perangkat mobile */
+  }
+}
+
+#peta {
+  background-color:#d8ccbd;
+  font-family: "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;;
+  font-size: 13px;
+}
+
+#peta h2 span.first-word {
+  color: #5a233b;
+  margin-top: 10px;
+}
+#peta h2 span.second-word {
+  color: #02586f;
+}
+
+#peta p:nth-last-child(-n+7) {
+  text-align: left; /* Mengatur rata kiri untuk 7 paragraf terakhir di dalam elemen dengan ID peta */
+}
+
+#peta p {
+  margin-bottom: 10px; /* Menambahkan jarak bawah antara setiap paragraf */
+  line-height: 0.5; /* Menentukan tinggi baris untuk memperjelas bacaan */
+  color: #064858;
+  font-size: 12px;
+}
+
+@media only screen and (max-width: 600px) {
+  #peta h2 {
+    font-size: 10px; /* Ukuran font yang lebih kecil untuk judul */
+    margin-top: 10px; /* Sesuaikan margin atas */
+    margin-bottom: 15px; /* Sesuaikan margin bawah */
+    text-align: center; /* Pusatkan judul */
+  }
+
+  #peta p {
+    margin-bottom: 2px;
+    line-height: 0.4;
+    font-size: 4px; /* Ukuran font yang lebih kecil untuk paragraf */
+  }
+}
+
+#map {
+  width: 60%;
+  height: 800px;
+  margin: 0 auto; /* Atur margin otomatis pada sisi kiri dan kanan */
+}
+
+/* CSS untuk mengatur letak dan gaya ikon dan nama objek pada kontrol layer */
+.layer-icon {
+  vertical-align: middle; /* Mengatur posisi vertikal ikon ke tengah */
+}
+
+/* CSS untuk mengatur nama objek */
+.leaflet-control-layers-list label {
+  display: flex; /* Menggunakan flexbox agar ikon dan teks berada dalam satu baris */
+  align-items: center; /* Mengatur penataan item secara vertikal di tengah container */
+}
+
+/* Untuk menjorokkan kotak centang ke kiri */
+.leaflet-control-layers-list input[type="checkbox"] {
+  margin-right: 5px; /* Memberi jarak antara kotak centang dan ikon */
+  margin-left: 0; /* Menjadikan margin kiri kotak centang menjadi 0 */
+  align-self: flex-start; /* Mengatur agar kotak centang berada di atas (pada bagian atas container) */
+  margin-left: 0; /* Menjadikan margin kiri kotak centang menjadi 0 */
+  align-self: flex-start; /* Mengatur agar kotak centang berada di atas (pada bagian atas container) */
+}
+
+#galeri {
+  background-color: #b5c2e9;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.gallery{
+  width: 80%;
+  height: 90vh;
+  max-width: 1600px;
+  max-height: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery-image{
+  width: 30%;
+  height: calc(50% - 20px);
+  min-width: 150px; /* Ubah lebar minimal gambar */
+  min-height: 150px; /* Ubah tinggi minimal gambar */
+  margin: 10px;
+  overflow: hidden;
+  font-family: "Graphik", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+}
+
+.image{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 1s;
+}
+
+/* popup */
+
+.popup{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 80%;
+  max-width: 1600px;
+  height: 90vh;
+  max-height: 500px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+  overflow: hidden;
+  transition: 1s;
+  opacity: 0;
+  font-family: "Graphik", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+}
+
+.popup.active{
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+.popup.active .close-btn,
+.popup.active .image-name,
+.popup.active .index,
+.popup.active .large-image,
+.popup.active .arrow-btn{
+  opacity: 1;
+  transition: opacity .5s;
+  transition-delay: 1s;
+}
+
+.top-bar{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  font-weight: 300;
+}
+
+.image-name{
+  opacity: 0;
+}
+
+.close-btn{
+  opacity: 0;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #6768ab;
+  cursor: pointer;
+}
+
+.arrow-btn{
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px;
+  border-radius: 50%;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.left-arrow{
+  left: 10px;
+}
+
+.right-arrow{
+  right: 10px;
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.arrow-btn:hover{
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.index{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 80px;
+  font-weight: 100;
+  color: rgba(255, 255, 255, 0.4);
+  opacity: 0;
+}
+
+.large-image{
+  margin-top: 5%;
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  opacity: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  #galeri {
+  background-color: #b5c2e9;
+  display: flex;
+  align-items: flex-start;
+  padding: 0%;
+  justify-content: center; /* Pusatkan galeri di tengah */
+}
+  .gallery-image {
+    width: 45%; /* Ubah lebar gambar menjadi 45% untuk menampilkan 2 gambar per baris */
+    height: 15%; /* Ubah tinggi gambar untuk memperhitungkan jarak yang lebih kecil */
+    min-width: 100x; /* Ubah lebar minimal gambar */
+    min-height: 50px; /* Ubah tinggi minimal gambar */
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-top: 10px;
+    margin: 0px;
+  }
+
+  .image {
+    width: 100%; /* Mengisi lebar gambar sesuai dengan lebar container */
+    height: auto; /* Menyesuaikan tinggi gambar agar proporsi tetap */
+  }
+  .large-image {
+    width: 90%; /* Mengisi lebar gambar besar menjadi 90% dari lebar layar */
+    height: auto; /* Menyesuaikan tinggi gambar agar proporsi tetap */
+  }
+
+.gallery{
+  align-items: flex-start;
+  margin: 0px;
+}
+}
+
+#kontak {
+  background-color:	#FFF0F5;
+  padding: 50px;
+  color: #654321;
+  min-height: auto; /* Gunakan min-height agar sesuai dengan konten */
+  font-family: "Graphik", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}

@@ -1,17 +1,174 @@
 <!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Download Folder</title>
-</head>
-<body style="font-family: sans-serif; text-align: center; padding-top: 100px;">
-  <h1>Download File (1.23 GB)</h1>
-  <p>Kamu bisa download file dari Google Drive lewat link di bawah ini:</p>
-  <a href="https://drive.google.com/drive/folders/1AwrRLJG0SQLvA33eEXVZaaXH849vspsd?usp=sharing"
-     target="_blank"
-     style="font-size: 20px; color: white; background-color: #007bff; padding: 10px 20px; border-radius: 6px; text-decoration: none;">
-    Buka Folder di Google Drive
-  </a>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <title>Website Maliobro</title>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <a href="#"><img src="gambar/huhu.png" alt="Logo Putih"></a>
+      </div> 
+      <button class="menu-btn">
+        <div class="menu-icon"></div>
+        <div class="menu-icon"></div>
+        <div class="menu-icon"></div>
+      </button>
+      <ul>
+        <li><a href="#beranda">Beranda</a></li>
+        <li><a href="#sejarah">Sejarah</a></li>
+        <li><a href="#virtual-tour">Virtual Tour</a></li>
+        <li><a href="#peta">Peta</a></li>
+        <li><a href="#galeri">Galeri</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+    </nav>
+
+    <section id="beranda">
+      <div class="buttons">
+        <button onclick="window.open('https://yokmalbor.netlify.app/', '_blank')">
+          Mulai Tur
+        </button>
+      </div>
+    </section>
+
+    <section id="sejarah">
+      <div class="gambar">
+        <a href="#"><img src="gambar/desa.png" alt="Logo Putih"></a>
+      </div>
+      <div>
+        <!-- Tab Navigasi -->
+        <ul class="tabs">
+            <li class="tab-button" data-tab-id="tabContent1">Profil</li>
+            <li class="tab-button" data-tab-id="tabContent2">Sejarah</li>
+        </ul>
+    
+        <!-- Konten Tab -->
+        <div id="tabContent1" class="tab-content active">
+            <p>Jalan Malioboro terletak di pusat Kota Yogyakarta, provinsi Daerah Istimewa Yogyakarta, Indonesia. Jalan ini membentang sepanjang sekitar 1,3 kilometer, menghubungkan Tugu Yogyakarta di bagian utara dengan Pasar Beringharjo di bagian selatan. Malioboro sebagai objek wisata legandaris di Jogja menawarkan wisata belanja tradisional serta modern. Malioboro secara keseluruhan terdiri asal Jalan Margo Utomo, Jalan Malioboro, serta Jalan Margo Mulyo. Kawasan Malioboro bukan hanya merupakan pusat kegiatan perdagangan dan perbelanjaan, tetapi juga menjadi salah satu ikon wisata yang paling terkenal di Yogyakarta sehingga menarik wisatawan dari berbagai daerah dan negara untuk menikmati suasana khasnya, produk kerajinan lokal, dan keunikan sejarahnya.</p>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        <div id="tabContent2" class="tab-content">
+            <p>Jalan Malioboro didirikan sejalan dengan berdirinya Kraton Yogyakarta. Dalam bahasa Sansekerta, kata "malioboro" memiliki arti karangan bunga, dan mungkin berkaitan dengan masa lalu di mana Jalan Malioboro akan dipenuhi dengan bunga saat Kraton mengadakan acara besar.
+            <br>
+            <br>
+            "Malioboro" mencakup perjalanan menuju kesempurnaan hidup, dengan dua nama jalan utama, Margo Mulyo dan Margo Utomo, sebagai bagian dari konsep Sangkan Paraning Dumadi. Sejak berdirinya Kasultanan Yogyakarta, jalan ini berfungsi sebagai rajamarga untuk kegiatan seremonial dan penyambutan tamu negara. Selain itu, di sekitar Malioboro terdapat Kepatihan sebagai pusat pemerintahan dan Pasar Gede sebagai pusat ekonomi. Pasar Gede, awalnya hanyalah tanah lapang, berkembang pesat dan dijuluki pasar terindah di Jawa.
+            <br>
+            <br>
+            Pada sekitar tahun 1870-an, ekonomi Yogyakarta berkembang dengan adanya Undang-undang Agraria dan politik kolonial liberal.  Hal ini karena modal swasta mulai masuk, dan peraturan kepemilikan tanah menjadi lebih ketat. Selanjutnya, pada awal abad ke-20, terjadi peningkatan jumlah pendatang di Yogyakarta dan membuat Malioboro menjadi jalan pertokoan paling sibuk hingga saat ini.
+            <br>
+          </p>
+          </div>
+    </div>   
+    </section>
+
+    <section id="virtual-tour">
+      <h2>
+        <span class="first-word">Virtual</span> 
+        <span class="second-word">Tour</span>
+      </h2>
+      <img src="gambar/vt.jpg" class="rounded" alt="Rounded Image">
+      <div id="teks">
+      <p>Pembuatan website virtual tour wisata dan fasilitas umum di kawasan Malioboro memiliki konsep sebagai platform multimedia interaktif yang bertujuan untuk memberikan pengalaman eksplorasi yang mendalam dan informatif kepada pengguna.  Dengan memanfaatkan teknologi 3D dan panoramik 360 derajat, website ini memberikan pengalaman kepada pengguna untuk menjelajahi secara virtual wisata dan fasilitas umum yang terdapat di sepanjang Malioboro.
+        <br>
+        <br>
+        Yuk Eksplorasi Kawasan Jalan Malioboro menggunakan Virtual Tour.
+        <br>
+      </p>
+      <div class="virtual-tour-button"> <!-- Menggunakan kelas baru untuk tombol -->
+        <button onclick="window.open('https://yokmalbor.netlify.app/', '_blank')">
+          Virtual Tour
+        </button>
+      </div>
+    </section>
+
+    <!-- Peta Section Start -->
+    <section id="peta" class="map">
+      <h2>
+        <span class="first-word">Peta Wisata &</span> 
+        <span class="second-word">Fasilitas Umum di Malioboro</span>
+      </h2>
+        <p>Selamat datang di Peta Wisata & Fasilitas Umum di Malioboro</p>
+        <p>Temukan lokasi wisata dan fasilitas umum yang anda butuhkan dengan mengeksplorasi peta interaktif di bawah ini</p>
+        <p>Untuk memunculkan kategori anda dapat mengklik ikon sebelah kanan atas dan anda dapat melakukan checkbox untuk mengetahui lokasi yang anda inginkan</p>
+        <p>Ketika anda mengklik marker lokasi, maka akan muncul popup informasi lokasi dan anda akan diarahkan ke Google Maps untuk petunjuk arah yang akurat</p>
+        <p>Anda dapat menggunakan ikon sebelah kiri atas untuk melakukan zoom in dan zoom out</p>
+      <div id="map" style="height: 400px"></div>
+
+      <p>Kategori objek wisata berfungsi untuk memunculkan informasi persebaran lokasi wisata yang ada di Malioboro</p>
+      <p>Kategori tempat parkir berfungsi untuk memunculkan informasi persebaran lokasi parkir untuk motor maupun mobil di Malioboro</p>
+      <p>Kategori halte bus berfungsi untuk memunculkan informasi persebaran halte bus yang ada di Malioboro</p>
+      <p>Kategori informasi berfungsi untuk memunculkan informasi mengenai malioboro, seperti ruang informasi bagi turis, monumen yang ada di malioboro, dan spot foto yang menarik.</p>
+      <p>Kategori masjid berfungsi untuk memunculkan informasi persebaran masjid dan mushola yang ada di Malioboro</p>
+      <p>Kategori gereja berfungsi untuk memunculkan informasi persebaran gereja yang ada di Malioboro</p>
+      <p>Kategori toilet berfungsi untuk memunculkan informasi persebaran toilet yang dapat digunakan di Malioboro</p>
+    </section>
+    <!-- Peta Section End -->
+
+    <!-- Galeri Section -->
+    <section id="galeri">
+  
+      <!-- popup -->
+    <div class="popup">
+      <!-- top bar -->
+      <div class="top-bar">
+          <p class="image-name">data/i4.jpg</p>
+          <span class="close-btn"></span>
+      </div>
+      <!-- arrows -->
+      <button class="arrow-btn left-arrow"><img src="gambar/arrow.png" alt=""></button>
+      <button class="arrow-btn right-arrow"><img src="gambar/arrow.png" alt=""></button>
+      <!-- image -->
+      <img src="data/i4.jpg" class="large-image" alt="">
+      <!-- image-index -->
+      <h1 class="index">01</h1>
+  </div>
+
+  <div class="gallery">
+      <div class="gallery-image">
+          <img src="data/i4.jpg" alt="Plang Jalan Malioboro" class="image">
+      </div>
+      <div class="gallery-image">
+          <img src="data/i3.jpg" alt="Titik Nol Kota Yogyakarta" class="image">
+      </div>
+      <div class="gallery-image">
+          <img src="data/te.jpg" alt="Teras Malioboro 1" class="image">
+      </div>
+      <div class="gallery-image">
+          <img src="data/o7.jpeg" alt="Teras Malioboro 2" class="image">
+      </div>
+      <div class="gallery-image">
+          <img src="data/Mu.jpg" alt="Museum Benteng Vredeburg" class="image">
+      </div>
+      <div class="gallery-image">
+          <img src="data/o6.jpeg" alt="Jogja Library Center" class="image">
+      </div>
+  </div>
+    
+    </section>
+
+    <!-- Kontak Section -->
+    <section id="kontak">
+      <footer class="footer" id="kontak">
+        <div class="footer__content">
+          <p>Website ini masih bentuk beta atau dalam tahap pengembangan. Jika terdapat saran atau masukan dapat mengirimkan ke email berikut.</p>
+          <p>Terima kasih atas kontribusi Anda dalam membantu menciptakan sebuah website yang lebih baik.</p>
+          <p>@Email: <a href="mailto:int.anis1412@gmail.com">int.anis1412@gmail.com</a></p>
+          <p>Copyright © 2024 Intan Anisa Sholikhah</p>
+        </div>
+      </footer>
+    </section>
+
+    <!-- Skrip JavaScript Leaflet dan Inisialisasi Peta -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="main.js"></script>
+  </body>
 </html>
