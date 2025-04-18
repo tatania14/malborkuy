@@ -10,14 +10,14 @@
   <body>
     <nav>
       <div class="logo">
-        <a href="#"><img src="gambar/huhu.png" alt="Logo Putih"></a>
-      </div> 
-      <button class="menu-btn">
-        <div class="menu-icon"></div>
-        <div class="menu-icon"></div>
-        <div class="menu-icon"></div>
+        <a href="#"><img src="gambar/huhu.png" alt="Logo Putih" /></a>
+      </div>
+      <button class="menu-btn" id="menu-toggle">
+        <span class="menu-icon"></span>
+        <span class="menu-icon"></span>
+        <span class="menu-icon"></span>
       </button>
-      <ul>
+      <ul class="nav-links" id="nav-links">
         <li><a href="#beranda">Beranda</a></li>
         <li><a href="#sejarah">Sejarah</a></li>
         <li><a href="#virtual-tour">Virtual Tour</a></li>
@@ -39,11 +39,11 @@
       <div class="gambar">
         <a href="#"><img src="gambar/desa.png" alt="Logo Putih"></a>
       </div>
-      <div>
+      <div class="tab-wrapper">
         <!-- Tab Navigasi -->
         <ul class="tabs">
-            <li class="tab-button" data-tab-id="tabContent1">Profil</li>
-            <li class="tab-button" data-tab-id="tabContent2">Sejarah</li>
+          <li class="tab-button active" data-tab-id="tabContent1">Profil</li>
+          <li class="tab-button" data-tab-id="tabContent2">Sejarah</li>
         </ul>
     
         <!-- Konten Tab -->

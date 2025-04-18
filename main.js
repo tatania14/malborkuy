@@ -30,21 +30,17 @@ document.addEventListener("DOMContentLoaded", function () {
       const tabContents = document.querySelectorAll('.tab-content');
   
       // Menambahkan event listener ke setiap tombol tab
-      tabButtons.forEach(tabButton => {
-          tabButton.addEventListener('click', () => {
-              // Semua konten tab dan tombol tab dinonaktifkan
-              document.querySelectorAll('.tab-content').forEach(tabContent => {
-                  tabContent.classList.remove('active');
-              });
-              document.querySelectorAll('.tab-button').forEach(tabButton => {
-                  tabButton.style.backgroundColor = '#f0f0f0';
-              });
-  
-              // Mengaktifkan tab dan tombol tab yang dipilih
-              const tabId = tabButton.dataset.tabId;
-              document.getElementById(tabId).classList.add('active');
-              tabButton.style.backgroundColor = '#fff';
-          });
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          // Hapus aktif dari semua
+          tabButtons.forEach(btn => btn.classList.remove('active'));
+          tabContents.forEach(content => content.classList.remove('active'));
+      
+          // Tambahkan aktif ke yang diklik
+          const tabId = button.dataset.tabId;
+          document.getElementById(tabId).classList.add('active');
+          button.classList.add('active');
+        });
       });
 
       
