@@ -183,13 +183,22 @@ section h2 {
 }
 
 #sejarah {
-  background-color: #F3EFFD;
-  padding: 20px;
+  background-color: #F0F4EF;
+  padding: 40px 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  scroll-margin-top: 100px; /* Sesuaikan dengan tinggi navbar kamu */
+  scroll-margin-top: 40px; /* Sesuaikan dengan tinggi navbar kamu */
+}
+
+.sejarah-container {
+  display: flex;
+  flex-direction: row; /* default: teks di kiri, gambar di kanan */
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
 .tabs {
@@ -199,33 +208,49 @@ section h2 {
   margin-bottom: 10px;
 }
 
+:root {
+  --primary: #1B103D;
+  --accent: #D1884F;
+  --brown: #8B5E3C;
+  --light-bg: #FAF7F2;
+  --text: #444;
+  --green: #6C8B56;
+}
+
 .tab-button {
   cursor: pointer;
   padding: 10px 20px;
-  border: 1px solid #A0A3BD;
-  background-color: #FFBC70;
-  color: #2C1E4A;
+  border: 1px solid #A3B7A6;
+  background-color: #DCEDE6;
+  color:  #2F4F4F;
   margin-right: 5px;
-  border-radius: 8px 8px 0 0;
-  font-size: 16x; /* Kurangi ukuran font untuk tampilan yang lebih kecil */
+  border-radius: 15px 15px 0 0; /* Sudut atas dibulatkan */
+  font-size: 16px; /* Kurangi ukuran font untuk tampilan yang lebih kecil */
   transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: 'Merriweather', serif;
 }
 
 .tab-button.active {
-  background-color: #E89B3D;
-  color: #fff;
+  background-color: #A7C5BD;
+  color: #2F4F4F;
+}
+
+.tab-button.active {
+  background-color: #A7C5BD;
+  color: #2F4F4F;
 }
 
 .tab-content {
   display: none;
   padding: 20px;
   border: 1px solid #ccc;
-  border-radius: 0 0 15px 15px;
+  border-radius: 25px;
   background-color: #FFF5E8;
-  color: #0D3B28;
+  color: #2C1E4A;
   font-family: 'Open Sans', sans-serif;
   letter-spacing: .3px;
   text-align: justify;
+  transition: all 0.3s ease-in-out;
 }
 
 .tab-content.active {
@@ -233,30 +258,37 @@ section h2 {
 }
 
 .gambar{
-  flex: 1 1 250px;
+  flex: 1 1 40%;
   display: flex;
   justify-content: center;
   align-items: center;
   }
   
-  .gambar img {
-    vertical-align: middle;
-    width: 80%;
-    height: auto;
-    margin-top: 50px;
-    margin-right: 10px; /* Sesuaikan margin antara logo dan teks (jika diperlukan) */
+.gambar img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 30px;
+  transition: transform 0.3s ease;
   }
 
-  .tab-wrapper {
-    flex: 2 1 600px;
-    display: flex;
-    flex-direction: column;
+  .gambar img:hover {
+    transform: scale(1.02);
+  }
+  
+.tab-wrapper {
+  flex: 1 1 55%;
+  display: flex;
+  flex-direction: column;
   }
 
   /* Media query untuk perangkat mobile dengan lebar maksimum 600px */
 @media only screen and (max-width: 768px) {
   #sejarah {
     flex-direction: column;
+    align-items: center;
+  }
+  .sejarah-container {
+    flex-direction: column-reverse;
     align-items: center;
   }
   .tab-button {
@@ -278,96 +310,89 @@ section h2 {
   color: #0D3B28;
   font-family: 'Open Sans', sans-serif;
   margin: 0;
-  padding: 10px;
+  padding: 60px 20px;
   display: flex;
   height: 100vh; /* Menggunakan tinggi 100% dari viewport height */
-}
-
-#virtual-tour h2  {
-  padding: 40px;
-  font-size: 24px; /* Ukuran font */
-  font-weight: bold; /* Ketebalan font */
-  font-family: 'Open Sans', sans-serif;
-}
-
-#virtual-tour h2 span.first-word {
-  color: #2C1E4A;
-}
-#virtual-tour h2 span.second-word {
-  color: #2C1E4A;
 }
 
 .container {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh; /* Atur tinggi container agar memenuhi tinggi layar */
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+  flex-wrap: wrap;
 }
 
-.rounded {
-  width: 100px;
-  height: auto;
-  align-items: center;
-  justify-content: center;
-  flex: 1; /* Menggunakan 1 bagian dari 2 bagian (50%) ruang flex */
-  padding: 50px;
-  margin-top: 50px;
-  border-radius: 25% 10% 25% 10%; /* Menjadikan sudut-sudut atas agak oval */
+#virtual-tour h2  {
+  font-size: 32px; /* Ukuran font */
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 20px;
+}
+
+#virtual-tour .first-word,
+#virtual-tour .second-word {
+  color: #2C1E4A;
 }
 
 #teks {
-  flex: 1; /* Menggunakan 1 bagian dari 2 bagian (50%) ruang flex */
-  padding: 100px;
-  box-sizing: border-box; /* Untuk memasukkan padding ke dalam lebar dan tinggi elemen */
-  text-align: justify;
-  color: #0D3B28;
-  font-size: 16x; /* Kurangi ukuran font untuk tampilan yang lebih kecil */
+  flex: 1 1 50%;
   font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  text-align: justify;
+  line-height: 1.7;
 }
 
-.virtual-tour-button { /* Menambahkan kelas khusus untuk tombol di bagian Virtual Tour */
-  text-align: center; /* Pusatkan tombol pada perangkat mobile */
-  margin-top: 50px; /* Atur jarak antara teks dan tombol */
+.rounded {
+  flex: 1 1 40%;
+  max-width: 400px;
+  width: 100%;
+  border-radius: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.virtual-tour-button {
+  margin-top: 30px;
 }
 
 .virtual-tour-button button {
-  padding: 10px 20px;
+  padding: 12px 24px;
   font-size: 16px;
-  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
   background-color: #FFBC70;
-  color:#0D1B2A ;
-  border:#FFA548;
-  max-width: 150px; /* Maksimum lebar tombol agar tidak terlalu lebar pada layar besar */
+  color: #0D1B2A;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.virtual-tour-button button:hover {
+  background-color: #ffa548;
+  transform: scale(1.05);
 }
 
 /* Media query untuk perangkat mobile dengan lebar maksimum 600px */
 @media only screen and (max-width: 600px) {
-  #virtual-tour {
-    flex-direction: column; /* Ubah tata letak ke vertikal */
-    height: auto; /* Gunakan tinggi otomatis */
-  }
-
-  .rounded {
-    margin-top: 0; /* Hapus margin atas */
-    width: 200px; /* Sesuaikan lebar gambar */
-    height: auto; /* Tinggi otomatis */
-    padding: 20px; /* Kurangi padding agar lebih sesuai di perangkat mobile */
-    border-radius: 25%; /* Membuat gambar menjadi lingkaran */
-    display: block; /* Mengubah gambar menjadi elemen blok */
-    margin: 0 auto; /* Membuat margin otomatis pada sumbu horizontal untuk pemusatan */
+  .container {
+    flex-direction: column;
+    text-align: center;
   }
 
   #teks {
-    padding: 10px; /* Kurangi padding lebih lanjut untuk tampilan yang lebih ramping */
-    font-size: 14px; /* Kurangi ukuran font untuk tampilan yang lebih kecil */
+    padding: 10px;
+    font-size: 14px;
   }
-  .virtual-tour-button { /* Menambahkan kelas khusus untuk tombol di bagian Virtual Tour */
-    text-align: center; /* Pusatkan tombol pada perangkat mobile */
-    margin-top: 20px; /* Atur jarak antara teks dan tombol */
+
+  .rounded {
+    margin-bottom: 30px;
+    border-radius: 20px;
   }
-  .virtual-tour-buttons button {
-    width: 100%; /* Mengatur lebar tombol agar mengisi seluruh lebar kontainer */
-    max-width: none; /* Membatalkan maksimum lebar tombol agar responsif di perangkat mobile */
+
+  .virtual-tour-button button {
+    width: 100%;
+    max-width: 250px;
   }
 }
 

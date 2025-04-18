@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <title>Website Maliobro</title>
   </head>
@@ -36,15 +38,13 @@
     </section>
 
     <section id="sejarah">
-      <div class="gambar">
-        <a href="#"><img src="gambar/desa.png" alt="Logo Putih"></a>
-      </div>
-      <div class="tab-wrapper">
-        <!-- Tab Navigasi -->
-        <ul class="tabs">
-          <li class="tab-button active" data-tab-id="tabContent1">Profil</li>
-          <li class="tab-button" data-tab-id="tabContent2">Sejarah</li>
-        </ul>
+      <div class="sejarah-container">
+        <div class="tab-wrapper">
+          <!-- Tab Navigasi -->
+          <ul class="tabs">
+            <li class="tab-button active" data-tab-id="tabContent1">Profil</li>
+            <li class="tab-button" data-tab-id="tabContent2">Sejarah</li>
+          </ul>
     
         <!-- Konten Tab -->
         <div id="tabContent1" class="tab-content active">
@@ -68,15 +68,23 @@
           </p>
           </div>
     </div>   
+
+    <div class="gambar">
+      <a href="#"><img src="gambar/desa.png" alt="Logo Putih"></a>
+    </div>
+  </div>
     </section>
 
     <section id="virtual-tour">
-      <h2>
-        <span class="first-word">Virtual</span> 
-        <span class="second-word">Tour</span>
-      </h2>
-      <img src="gambar/vt.jpg" class="rounded" alt="Rounded Image">
+      <div class="container">
+        <div class="image-container">
+          <img src="gambar/vt.jpg" class="rounded" alt="Rounded Image">
+        </div>
       <div id="teks">
+        <h2>
+          <span class="first-word">Virtual</span> 
+          <span class="second-word">Tour</span>
+        </h2>
       <p>Pembuatan website virtual tour wisata dan fasilitas umum di kawasan Malioboro memiliki konsep sebagai platform multimedia interaktif yang bertujuan untuk memberikan pengalaman eksplorasi yang mendalam dan informatif kepada pengguna.  Dengan memanfaatkan teknologi 3D dan panoramik 360 derajat, website ini memberikan pengalaman kepada pengguna untuk menjelajahi secara virtual wisata dan fasilitas umum yang terdapat di sepanjang Malioboro.
         <br>
         <br>
