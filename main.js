@@ -341,37 +341,48 @@ for (var category in markers) {
     `);
 
     // Tambahkan marker ke objek layer yang sesuai
-    if (category === 'Kategori1') {
-      layerKategori1.addLayer(marker);
-    } else if (category === 'Kategori2') {
-      layerKategori2.addLayer(marker);
-    } else if (category === 'Kategori3') {
-      layerKategori3.addLayer(marker);
-    } else if (category === 'Kategori4') {
-      layerKategori4.addLayer(marker);
-    } else if (category === 'Kategori5') {
-      layerKategori5.addLayer(marker);
-    } else if (category === 'Kategori6') {
-      layerKategori6.addLayer(marker);
-    } else if (category === 'Kategori7') {
-      layerKategori7.addLayer(marker);
+    switch (category) {
+      case 'Kategori1':
+        layerKategori1.addLayer(marker);
+        break;
+      case 'Kategori2':
+        layerKategori2.addLayer(marker);
+        break;
+      case 'Kategori3':
+        layerKategori3.addLayer(marker);
+        break;
+      case 'Kategori4':
+        layerKategori4.addLayer(marker);
+        break;
+      case 'Kategori5':
+        layerKategori5.addLayer(marker);
+        break;
+      case 'Kategori6':
+        layerKategori6.addLayer(marker);
+        break;
+      case 'Kategori7':
+        layerKategori7.addLayer(marker);
+        break;
     }
   });
 }
 
 // Buat objek kontrol layer dengan ikon khusus untuk setiap layer kategori
-var controlLayers = L.control.layers(null, {
-  '<img src="gambar/Desain tanpa judul.png" width="20px" class="layer-icon"> Objek Wisata': layerKategori6,
-  '<img src="gambar/parkir.png" width="20px" class="layer-icon"> Tempat Parkir': layerKategori5,
-  '<img src="gambar/halte.png" width="20px" class="layer-icon"> Halte Bus': layerKategori2,
-  '<img src="gambar/info.png" width="20px" class="layer-icon"> Informasi': layerKategori3,
-  '<img src="gambar/masjid.png" width="20px" class="layer-icon"> Masjid': layerKategori1,
-  '<img src="gambar/gereja.png" width="20px" class="layer-icon"> Gereja': layerKategori7,
-  '<img src="gambar/toilet.png" width="20px" class="layer-icon"> Toilet': layerKategori4,
+const controlLayers = L.control.layers(null, {
+  '<span class="layer-label"><img src="gambar/Desain tanpa judul.png" class="layer-icon" /> Objek Wisata</span>': layerKategori6,
+  '<span class="layer-label"><img src="gambar/parkir.png" class="layer-icon" /> Tempat Parkir</span>': layerKategori5,
+  '<span class="layer-label"><img src="gambar/halte.png" class="layer-icon" /> Halte Bus</span>': layerKategori2,
+  '<span class="layer-label"><img src="gambar/info.png" class="layer-icon" /> Informasi</span>': layerKategori3,
+  '<span class="layer-label"><img src="gambar/masjid.png" class="layer-icon" /> Masjid</span>': layerKategori1,
+  '<span class="layer-label"><img src="gambar/gereja.png" class="layer-icon" /> Gereja</span>': layerKategori7,
+  '<span class="layer-label"><img src="gambar/toilet.png" class="layer-icon" /> Toilet</span>': layerKategori4,
 }).addTo(map);
 
 // Buat sebuah layer group yang berisi kedua layer kategori
-var allLayers = L.layerGroup([layerKategori1, layerKategori2, layerKategori3, layerKategori4, layerKategori5, layerKategori6, layerKategori7]);
+const allLayers = L.layerGroup([
+  layerKategori1, layerKategori2, layerKategori3,
+  layerKategori4, layerKategori5, layerKategori6, layerKategori7
+]);
 
 // Tambahkan layer group sebagai satu overlay dalam objek kontrol layer
 controlLayers.addOverlay(allLayers, "Semua Kategori");
