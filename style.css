@@ -512,36 +512,47 @@ section h2 {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  scroll-margin-top: 40px; /* Sesuaikan dengan tinggi navbar kamu */
+  flex-direction: column;
+  padding: 40px 20px;
+  scroll-margin-top: 15px; /* Sesuaikan dengan tinggi navbar kamu */
 }
 
-.gallery{
-  width: 80%;
-  height: 90vh;
-  max-width: 1600px;
-  max-height: 800px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+.gallery.masonry-gallery {
+  column-count: 3;
+  column-gap: 1em;
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
 }
 
-.gallery-image{
-  width: 30%;
-  height: calc(50% - 20px);
-  min-width: 150px; /* Ubah lebar minimal gambar */
-  min-height: 150px; /* Ubah tinggi minimal gambar */
-  margin: 10px;
-  overflow: hidden;
-  font-family: 'Roboto', sans-serif;
-  font-size: 18px;
+.gallery.masonry-gallery .gallery-image {
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 1em;
+  break-inside: avoid;
+}
+
+.gallery.masonry-gallery .image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.gallery.masonry-gallery .image:hover {
+  transform: scale(1.02);
 }
 
 .image{
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: 1s;
+  transition: transform 0.5s ease;
+}
+
+.image:hover {
+  transform: scale(1.05);
 }
 
 /* popup */
@@ -551,21 +562,19 @@ section h2 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
-  width: 80%;
-  max-width: 1600px;
-  height: 90vh;
-  max-height: 500px;
-  border-radius: 20px;
-  background: rgba(0, 0, 0, 0.75);
+  width: 90%;
+  max-width: 1000px;
+  height: 80vh;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.85);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 5;
+  z-index: 1000;
   overflow: hidden;
-  transition: 1s;
   opacity: 0;
-  font-family: 'Roboto', sans-serif;
-  font-size: 18px;
+  transition: 0.5s ease-in-out;
+  margin-top: 30px;
 }
 
 .popup.active{
@@ -573,120 +582,123 @@ section h2 {
   opacity: 1;
 }
 
-.popup.active .close-btn,
-.popup.active .image-name,
-.popup.active .index,
-.popup.active .large-image,
-.popup.active .arrow-btn{
-  opacity: 1;
-  transition: opacity .5s;
-  transition-delay: 1s;
-}
-
-.top-bar{
+.popup .top-bar {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 50px;
-  background: #000;
+  background: #111;
   color: #fff;
-  text-align: center;
   line-height: 50px;
-  font-weight: 300;
+  text-align: center;
+  font-weight: 400;
+  font-size: 14px;
 }
 
-.image-name{
-  opacity: 0;
-}
-
-.close-btn{
-  opacity: 0;
+.close-btn {
   position: absolute;
   top: 15px;
   right: 20px;
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: #6768ab;
+  background: #ff6b6b;
   cursor: pointer;
+  z-index: 10;
 }
 
-.arrow-btn{
-  opacity: 0;
+.arrow-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   padding: 10px;
   border-radius: 50%;
   border: none;
-  background: none;
+  background: rgba(0, 0, 0, 0.5);
   cursor: pointer;
 }
 
-.left-arrow{
+.left-arrow {
   left: 10px;
 }
 
-.right-arrow{
+.right-arrow {
   right: 10px;
   transform: translateY(-50%) rotate(180deg);
 }
 
-.arrow-btn:hover{
-  background: rgba(0, 0, 0, 0.5);
-}
-
-.index{
+.index {
   position: absolute;
   bottom: 10px;
-  right: 10px;
-  font-size: 80px;
-  font-weight: 100;
-  color: rgba(255, 255, 255, 0.4);
-  opacity: 0;
+  right: 20px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 60px;
+  font-weight: 200;
 }
 
-.large-image{
-  margin-top: 5%;
-  width: 80%;
+.large-image {
+  width: 90%;
   height: 80%;
   object-fit: contain;
-  opacity: 0;
+  margin-top: 10px;
 }
 
 @media only screen and (max-width: 768px) {
-  #galeri {
-  background-color: #b5c2e9;
-  display: flex;
-  align-items: flex-start;
-  padding: 0%;
-  justify-content: center; /* Pusatkan galeri di tengah */
-}
-  .gallery-image {
-    width: 45%; /* Ubah lebar gambar menjadi 45% untuk menampilkan 2 gambar per baris */
-    height: 15%; /* Ubah tinggi gambar untuk memperhitungkan jarak yang lebih kecil */
-    min-width: 100x; /* Ubah lebar minimal gambar */
-    min-height: 50px; /* Ubah tinggi minimal gambar */
-    flex-wrap: wrap;
-    align-items: flex-start;
-    margin-top: 10px;
-    margin: 0px;
+  .gallery.masonry-gallery {
+    column-count: 2;
   }
 
-  .image {
-    width: 100%; /* Mengisi lebar gambar sesuai dengan lebar container */
-    height: auto; /* Menyesuaikan tinggi gambar agar proporsi tetap */
+  .popup {
+    width: 90%;              /* Lebar lebih kecil */
+    height: 70vh;            /* Tinggi lebih pendek */
+    top: 60%;                /* Geser lebih ke bawah biar aman dari navbar */
+    max-height: none;        /* Hapus batas tinggi agar fleksibel */
+    border-radius: 10px
   }
+
   .large-image {
-    width: 90%; /* Mengisi lebar gambar besar menjadi 90% dari lebar layar */
-    height: auto; /* Menyesuaikan tinggi gambar agar proporsi tetap */
+    width: 95%;
+    height: auto;
+    margin-top: 20px;
   }
 
-.gallery{
-  align-items: flex-start;
-  margin: 0px;
+  .top-bar {
+    height: 40px;
+    font-size: 14px;
+    line-height: 40px;
+  }
+
+  .close-btn {
+    top: 10px;
+    right: 15px;
+    width: 18px;
+    height: 18px;
+  }
+
+  .index {
+    font-size: 40px;
+    bottom: 5px;
+    right: 5px;
+  }
+
+  .arrow-btn {
+    padding: 5px;
+  }
 }
+
+@media only screen and (max-width: 480px) {
+  .gallery.masonry-gallery {
+    column-count: 1;
+  }
+  
+  .gallery-image {
+    flex: 1 1 100%;
+  }
+
+  .index {
+    font-size: 36px;
+  }
 }
 
 #kontak {
